@@ -1,3 +1,5 @@
+import traceback
+from fastapi.openapi import models
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
@@ -87,7 +89,16 @@ class ForecastEngine:
             interval_width=0.95
         )
         
-        model.fit(prophet_train)
+        import traceback
+
+        try:
+            model.fit(prophet_train)
+        except Exception as e:
+            print("\n========== PROPHET TRAIN ERROR ==========")
+            traceback.print_exc()
+            print("=========================================\n")
+            raise
+
         self.prophet_model = model
         
         # Predict on validation
@@ -187,7 +198,13 @@ class ForecastEngine:
             'ds': pd.to_datetime(df_processed[self.date_col]),
             'y': df_processed[self.target_col]
         })
-        self.prophet_model.fit(prophet_full_df)
+        try:
+            self.prophet_model.fit(prophet_full_df)
+        except Exception as e:
+            print("\n========== PROPHET FULL TRAIN ERROR ==========")
+            traceback.print_exc()
+            print("==============================================\n")
+            raise
         
         X_full, y_full = self.prepare_data(df_processed)
         self.rf_model = RandomForestRegressor(
