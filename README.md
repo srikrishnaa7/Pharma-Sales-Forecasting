@@ -95,6 +95,3 @@ $$\hat{Y}_{t} = W_{\text{Prophet}} \cdot \hat{Y}_{\text{Prophet}, t} + W_{\text{
    ```
 3. Open http://localhost:5173 in your browser to interact with the platform.
 
-### Credentials
-- **Admin**: Username `admin`, Password `adminpassword` (Full access)
-- **Analyst**: Username `analyst`, Password `analystpassword` (Read-only access)
