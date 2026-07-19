@@ -1,6 +1,6 @@
-# AegisPharma: AI-Powered Sales Analytics & Forecasting Platform
+# Pharma Sales Forecaster: AI-Powered Sales Analytics & Forecasting Platform
 
-AegisPharma is an industry-grade, production-ready pharmaceutical sales analytics and forecasting platform designed for commercial managers and distributors. It automatically digests sales data, preprocesses it, fits a **Hybrid FB Prophet + Random Forest Ensemble**, and generates strategic business suggestions using **Google Gemini LLM**.
+Pharma Sales Forecaster is an industry-grade, production-ready pharmaceutical sales analytics and forecasting platform designed for commercial managers and distributors. It automatically digests sales data, preprocesses it, fits a **Hybrid FB Prophet + Random Forest Ensemble**, and generates strategic business suggestions using **Google Gemini LLM**.
 
 ---
 
@@ -95,6 +95,3 @@ $$\hat{Y}_{t} = W_{\text{Prophet}} \cdot \hat{Y}_{\text{Prophet}, t} + W_{\text{
    ```
 3. Open http://localhost:5173 in your browser to interact with the platform.
 
-### Credentials
-- **Admin**: Username `admin`, Password `adminpassword` (Full access)
-- **Analyst**: Username `analyst`, Password `analystpassword` (Read-only access)
